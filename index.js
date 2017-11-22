@@ -3,7 +3,7 @@ import VueRouter from "vue-router"
 import App from "./App.vue"
 import DefaultLayout from "./layouts/Default.vue"
 import Products from "./pages/Products.vue"
-import ContactForm from "./components/ContactForm.vue"
+import ProductForm from "./components/ProductForm.vue"
 
 Vue.use(VueRouter)
 
@@ -14,13 +14,13 @@ let router = new VueRouter({
       path: "",
       component: DefaultLayout,
       children: [
-        { path: "/products", component: Products, name: 'products' },
-        { path: "/products/new", component: ContactForm },
-        // {
-        //   path: "/products/edit/:id",
-        //   name: "editContact",
-        //   component: ContactForm
-        // }
+        { path: "/products", component: Products },
+        { path: "/products/new", component: ProductForm },
+        {
+          path: "/products/edit/:id",
+          name: "editProduct",
+          component: ProductForm
+        }
       ]
     }
   ]

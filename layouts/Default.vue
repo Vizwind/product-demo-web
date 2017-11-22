@@ -2,7 +2,9 @@
   <div>
     <h1 class="title">Products Demo</h1>
     <div class="container">
-      <router-link to="/products">Products</router-link>
+      <nav>
+        <router-link to="/products">Products</router-link>
+      </nav>
       <router-view></router-view>
     </div>
   </div>
@@ -12,7 +14,11 @@
 </script>
 
 <style>
-h1.title {
-  text-align: center;
-}
+  h1.title {
+    text-align: center;
+  }
+
+  nav {
+    margin: 5px 0 25px 0
+  }
 </style>

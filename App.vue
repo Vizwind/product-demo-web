@@ -23,4 +23,9 @@
     .table tr td {
       vertical-align: middle !important;
     }
+
+    .errors {
+        color: red;
+        margin: 0 0 15px 0
+    }
 </style>
