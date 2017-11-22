@@ -5,6 +5,10 @@ export default class Products {
     return RestUtilities.get("/api/products")
   }
 
+  fetch(id) {
+    return RestUtilities.get(`/api/products/${id}`)
+  }
+
   update(product) {
     return RestUtilities.put(`/api/products/${product.id}`, product)
   }

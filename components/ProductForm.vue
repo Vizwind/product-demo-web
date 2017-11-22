@@ -9,6 +9,10 @@
     </ul>
     <form v-on:submit.prevent="onSubmit">
       <div class="form-group">
+        <label htmlFor="id" class="form-control-label">ID</label>
+        <div>{{ product.id }}</div>
+      </div>
+      <div class="form-group">
         <label htmlFor="inputFirstName" class="form-control-label">Name</label>
         <input v-validate="'required'" type="text" name="name" id="inputName" v-model="product.name"
                class="form-control form-control-danger"/>

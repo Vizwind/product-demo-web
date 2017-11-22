@@ -36,7 +36,7 @@ export default {
         if (!response.is_error) {
           this.$router.go(-1)
         } else {
-          this.serverErrors = response.error_content.errors
+          this.serverErrors = response.error_content.errors || [response.error_content.code]
         }
       })
     }
