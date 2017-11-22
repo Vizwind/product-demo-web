@@ -4,7 +4,7 @@ export default {
   data: function() {
     return {
       product: null,
-      errors: []
+      serverErrors: []
     }
   },
   created() {
@@ -24,7 +24,11 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.saveProduct(this.product)
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.saveProduct(this.product)
+        }
+      })
     },
     saveProduct(product) {
       let productService = new ProductService()
@@ -32,7 +36,7 @@ export default {
         if (!response.is_error) {
           this.$router.go(-1)
         } else {
-          this.errors = response.error_content.errors
+          this.serverErrors = response.error_content.errors
         }
       })
     }
