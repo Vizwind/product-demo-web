@@ -24,4 +24,8 @@ export default class Products {
       return this.create(product)
     }
   }
+
+  delete(id) {
+    return RestUtilities.delete(`/api/products/${id}`)
+  }
 }
