@@ -8,7 +8,7 @@
       <li v-for="error in serverErrors">{{ error }}</li>
     </ul>
     <form v-on:submit.prevent="onSubmit">
-      <div class="form-group">
+      <div v-if="product.id" class="form-group">
         <label htmlFor="id" class="form-control-label">ID</label>
         <div>{{ product.id }}</div>
       </div>
