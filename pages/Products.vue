@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import ProductService from "../services/Products";
+
 export default  {
   data: function() {
     return {
@@ -49,22 +51,12 @@ export default  {
   },
   methods: {
     showAll: function() {
-        this.searchQuery = ''
-        this.products = [
-          {
-            id: 1,
-            name: 'iPhone',
-            description: 'best phone possible',
-            price: 20
-          },
-          {
-            id: 2,
-            name: 'iPhone',
-            description: 'best phone possible',
-            price: 20
-          }
-        ]
-        this.isSearchMode = false
+      this.searchQuery = ''
+      this.isSearchMode = false
+      let productService = new ProductService()
+      productService.fetchAll().then(response => {
+        this.products = response.content
+      })
     }
   },
   computed: {
