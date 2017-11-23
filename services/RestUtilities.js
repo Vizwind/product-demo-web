@@ -1,4 +1,4 @@
-const baseUrl  = 'https://easy-mock.com/mock/5a15713f24f7a9469678c3a8/example'
+const baseUrl  = 'http://localhost:5000'
 
 export default class RestUtilities {
 
