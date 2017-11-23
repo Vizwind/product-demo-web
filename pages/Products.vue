@@ -74,7 +74,7 @@ export default  {
       this.isSearchMode = true
       let productService = new ProductService();
       productService.search(this.searchQuery).then(response => {
-        this.products = response.content
+        this.products = response.content && response.content.length ? response.content.map(item => item._source) : []
       })
     }
   },
