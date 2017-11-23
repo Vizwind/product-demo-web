@@ -5,7 +5,7 @@
       <input class="form-control form-control form-control-sm" type="text" v-model="searchQuery" placeholder="Search" />
       <button class="btn btn-outline-success btn-sm" type="submit">Search</button>&nbsp
     </form>
-    <p v-if="hasNoSearchResults">No results!</p>
+    <p v-if="hasNoSearchResults" style="margin: 20px 0">No results!</p>
     <table v-else class="table">
       <thead>
         <tr>
