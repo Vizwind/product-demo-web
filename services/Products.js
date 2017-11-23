@@ -10,7 +10,7 @@ export default class Products {
   }
 
   update(product) {
-    return RestUtilities.put(`/api/products/${product.id}`, product)
+    return RestUtilities.put(`/api/products`, product)
   }
 
   create(product) {
