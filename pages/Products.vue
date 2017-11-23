@@ -59,12 +59,14 @@ export default  {
       })
     },
     deleteProduct(product) {
-      let productService = new ProductService();
-      productService.delete(product.id).then((response) => {
-        let updatedProducts = this.products;
-        updatedProducts.splice(updatedProducts.indexOf(product), 1);
-        this.products = updatedProducts;
-      });
+      if(confirm(`Do you really want to delete product with id ${product.id} ?`) === true) {
+        let productService = new ProductService();
+        productService.delete(product.id).then((response) => {
+          let updatedProducts = this.products;
+          updatedProducts.splice(updatedProducts.indexOf(product), 1);
+          this.products = updatedProducts;
+        })
+      }
     }
   },
   computed: {
