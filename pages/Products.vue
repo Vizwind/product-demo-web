@@ -71,6 +71,7 @@ export default  {
     onSearch: function() {
       if(!this.searchQuery.trim()) return
       console.log(`searching ${this.searchQuery} ...`)
+      this.isSearchMode = true
       let productService = new ProductService();
       productService.search(this.searchQuery).then(response => {
         this.products = response.content
