@@ -67,6 +67,14 @@ export default  {
           this.products = updatedProducts;
         })
       }
+    },
+    onSearch: function() {
+      if(!this.searchQuery.trim()) return
+      console.log(`searching ${this.searchQuery} ...`)
+      let productService = new ProductService();
+      productService.search(this.searchQuery).then(response => {
+        this.products = response.content
+      })
     }
   },
   computed: {

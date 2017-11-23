@@ -28,4 +28,8 @@ export default class Products {
   delete(id) {
     return RestUtilities.delete(`/api/products/${id}`)
   }
+
+  search(searchQuery) {
+    return RestUtilities.get(`/api/products/search/${searchQuery}`)
+  }
 }
